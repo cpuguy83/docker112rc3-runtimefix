@@ -1,0 +1,4 @@
+FROM golang:1.6
+ADD . /go/src/github.com/cpuguy83/docker112rc3-runtimefix
+WORKDIR /go/src/github.com/cpuguy83/docker112rc3-runtimefix
+RUN go build
