@@ -18,5 +18,5 @@ $ ./docker112rc3-runtimefix /var/lib/docker
 
 Alternatively using the minimal docker image:
 ```bashtext
-$ docker run --rm -v /var/lib/docker:/docker cpuguy83/docker112rc3-runtimefix
+$ docker run --rm -v /var/lib/docker:/docker cpuguy83/docker112rc3-runtimefix:rc3
 ```
