@@ -38,6 +38,7 @@ func main() {
 		os.Exit(2)
 	}
 
+	var numProcessed int
 	for _, info := range infos {
 		if !info.IsDir() {
 			continue
@@ -51,6 +52,16 @@ func main() {
 			continue
 		}
 		fmt.Fprintln(os.Stdout, "proccessed", info.Name())
+		numProcessed++
+	}
+
+	c := "containers"
+	if numProcessed == 1 {
+		c = "container"
+	}
+	fmt.Fprintf(os.Stderr, "Processed %d %s\n", numProcessed, c)
+	if numProcessed > 0 {
+		fmt.Fprintln(os.Stderr, "You must now restart docker for changes to take affect")
 	}
 }
 
