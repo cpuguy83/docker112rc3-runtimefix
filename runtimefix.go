@@ -26,6 +26,7 @@ func main() {
 		noDir()
 	}
 
+	dir = filepath.Join(dir, "containers")
 	infos, err := ioutil.ReadDir(dir)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "error while reading from containers dir: %v\n", err)
