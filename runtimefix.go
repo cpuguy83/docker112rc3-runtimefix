@@ -85,7 +85,7 @@ func process(info os.FileInfo) error {
 	}
 	hcStat, err := os.Stat(hcPath)
 	if err != nil {
-		fmt.Errorf("could not read file mode for container config '%s', skipping: %v\n", id, err)
+		return fmt.Errorf("could not read file mode for container config '%s', skipping: %v\n", id, err)
 	}
 	if err := AtomicWriteFile(hcPath, b, hcStat.Mode()); err != nil {
 		return fmt.Errorf("could not fix config for container %s: %v\n", id, err)
